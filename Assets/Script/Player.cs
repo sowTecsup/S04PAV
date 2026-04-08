@@ -58,7 +58,32 @@ public class Player : BaseEntity
     {
         // base.TakeDamage(damager);
 
-        stats.TakeDamage((damager.Stats.Power) / 2);
+        Debug.Log(damager.Element);
+
+        int damage = damager.Stats.Power;
+
+        switch (damager.Element)
+        {
+            case Elements.None:
+                //damage = damage;
+                break;
+            case Elements.Fire:
+                damage *= 2;
+                break;
+            case Elements.Water:
+                damage /= 2;
+                break;
+            case Elements.Earth:
+                damage *= 3;
+                break;
+            case Elements.Air:
+                damage = 0;
+                break;
+            default:
+                break;
+        }
+
+        stats.TakeDamage(damage);
     }
 }
     

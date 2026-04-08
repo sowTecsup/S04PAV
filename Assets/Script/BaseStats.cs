@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+
 public class BaseStats 
 {
     // Relación de Composición
