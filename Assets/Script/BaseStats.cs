@@ -29,6 +29,7 @@ public class BaseStats
 
         this.health = health;
     }
+  
     public void SetSpeed(int speed)
     {
         this.speed = speed;
@@ -40,6 +41,13 @@ public class BaseStats
     public void SetXP(int xp)
     {
         this.xp = xp;
+    }
+    public void TakeDamage(int value)
+    {
+        health -= value;
+        if (health <= 0)
+            health = 0;
+
     }
     public int Health => health;
     public int Power => power;
